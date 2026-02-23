@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my hello world</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .nav-links {
+            margin: 20px 0;
+        }
+        .nav-links a {
+            display: inline-block;
+            margin: 10px 10px 10px 0;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello from Flask on Vercel! Balbino Salutes you!</h1>
+    
+    <div class="nav-links">
+        <a href="{{ url_for('list_persons') }}">Manage Persons</a>
+        <a href="{{ url_for('about') }}">About</a>
+    </div>
+    
+    <p>Welcome to the Flask SQLite CRUD application! Click "Manage Persons" to start managing the persons database.</p>
 </body>
 </html>
