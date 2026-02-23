@@ -5,8 +5,11 @@ import os
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-here'  # Change this in production
 
-# Database setup
-DATABASE = 'persons.db'
+# Database setup - use /tmp directory in production (Vercel)
+if os.environ.get('VERCEL'):
+    DATABASE = '/tmp/persons.db'
+else:
+    DATABASE = 'persons.db'
 
 def get_db_connection():
     """Create a database connection"""
